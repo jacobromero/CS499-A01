@@ -3,7 +3,11 @@ var app = express();
 
 app.get('/', function (req, res) {
    var uid = req.query.id;
-   res.send('Hello World, your uid = ' + uid);
+   if (uid) {
+      res.send('Hello World, your id = ' + uid);
+   } else {
+      res.send('Hello World!');
+   }
 });
 
 app.get('/test', function (req, res) {
